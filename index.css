@@ -1,0 +1,26 @@
+body {
+    background-color:turquoise;
+    border-color: 4px solid hotpink;
+   
+}
+
+.top{
+
+    text-align: center;
+    color:hotpink;
+    font-size: 50px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', ;
+    text-shadow: 4px -3px darksalmon;
+}
+
+
+hr{
+    border: 1px solid black;
+}
+
+.QUESTION{
+
+    text-align: center;
+    color:firebrick;
+    font-size: bold;
+}

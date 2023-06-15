@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS OF OBJECTS</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<br>
+<br>
+
+
+<h1 class="top">ARRAY OF OBJECTS </h1>
+
+<h3 class="QUESTION">
+
+
+
+   IMPORTANT:- 
+   
+   
+      "let studentRecords = [ {name: 'John', id: 123, marks : 98 },<br>
+    {name: 'Baba', id: 101, marks : 23 },<br>
+    {name: 'yaga', id: 200, marks : 45 },<br>
+    {name: 'Wick', id: 115, marks : 75 } ] "<br>
+
+</h3>
+
+<br>
+<br>
+
+<h3>Q1. "We are interested in retrieving only the students' names; all the names should be in caps.
+
+    ['JOHN', 'BABA', 'YAGA', 'WICK']"
+   
+</h3>
+
+
+<p>
+
+    let studentRecords = [ <br>
+    {name: 'John', id: 123, marks: 98},<br>
+    {name: 'Baba', id: 101, marks: 23},<br>
+    {name: 'yaga', id: 200, marks: 45},<br>
+    {name: 'Wick', id: 115, marks: 75}<br>
+  ];
+  
+  const studentNames = studentRecords.map(record => record.name.toUpperCase());<br>
+  
+  console.log(studentNames);<br>
+  
+
+</p>
+
+    
+
+<h4>ANS1.
+    <br>
+          ['JOHN', 'BABA', 'YAGA', 'WICK']
+</h4>
+
+<br>
+<hr>
+
+
+<h3>
+    
+    Q2.  "Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+    [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"
+
+
+</h3>
+
+
+<p>
+
+    let studentRecords = [
+    { name: 'John', id: 123, marks: 98 },<br>
+    { name: 'Baba', id: 101, marks: 23 },<br>
+    { name: 'yaga', id: 200, marks: 45 },<br>
+    { name: 'Wick', id: 115, marks: 75 }<br>
+     ];
+  
+     let highScorers = studentRecords.filter((student) => student.marks > 50);<br>
+  
+     console.log(highScorers);<br>
+  
+</p>
+
+
+<h4>ANS2.  
+    <br>
+       OUTPUT:-  [
+       { name: 'John', id: 123, marks: 98 },<br>
+       { name: 'Wick', id: 115, marks: 75 }<br>
+     ]
+
+</h4>
+
+<br>
+<br>
+<hr>
+
+<h3>Q3. Retrieve the details of students who scored more than 50 marks and have IDs greater than 120. </h3>
+
+<p>
+    let studentRecords = [
+    { name: 'John', id: 123, marks: 98 },<br>
+    { name: 'Baba', id: 101, marks: 23 },<br>
+    { name: 'yaga', id: 200, marks: 45 },<br>
+    { name: 'Wick', id: 115, marks: 75 }<br>
+  ];
+  
+  const filteredStudents = studentRecords.filter(student => { <br>
+    return student.marks > 50 && student.id > 120;<br>
+  });
+  
+  console.log(filteredStudents);<br>
+  
+  
+</p>
+
+<h4>
+    ANS3. 
+    <br>
+    OUTPUT:- 
+
+    [ { name: 'John', id: 123, marks: 98 } ]<br>
+
+</h4>
+
+<br><br>
+<hr>
+
+
+<h3>Q4. Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students. </h3>
+
+<p>
+    let studentRecords = [
+  {name: 'John', id: 123, marks : 98 },<br>
+  {name: 'Baba', id: 101, marks : 23 },<br>
+  {name: 'yaga', id: 200, marks : 45 },<br>
+  {name: 'Wick', id: 115, marks : 75 }<br>
+];
+
+let totalMarks = 0;<br>
+
+for (const record of studentRecords) {<br>
+  totalMarks += record.marks;<br>
+}
+
+console.log("Total Marks:", totalMarks);<br>
+
+</p>
+
+
+<h4>ANS4. 
+    <br>
+    OUTPUT:- Total Marks: 241  <br> 
+</h4>
+
+<br>
+<br>
+<hr>
+
+
+<h3>A5. This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</h3>
+
+
+<p>
+    let studentRecords = [
+  {name: 'John', id: 123, marks: 98},<br>
+  {name: 'Baba', id: 101, marks: 23},<br>
+  {name: 'yaga', id: 200, marks: 45},<br>
+  {name: 'Wick', id: 115, marks: 75}<br>
+];
+
+const names = studentRecords<br>
+  .filter(record => record.marks > 50)<br>
+  .map(record => record.name);<br>
+
+console.log(names); <br>
+
+
+</p>
+
+
+<h4>ANS5. 
+    <br>
+       OUTPUT:- [ 'John', 'Wick' ]  <br>
+
+</h4>
+
+<br>
+<br>
+<hr>
+
+
+<h3>Q6. This time we are required to print the sum of marks of the students with id > 120. </h3>
+
+<p>
+
+    let studentRecords = [
+    { name: 'John', id: 123, marks: 98 },<br>
+    { name: 'Baba', id: 101, marks: 23 },<br>
+    { name: 'yaga', id: 200, marks: 45 },<br>
+    { name: 'Wick', id: 115, marks: 75 }<br>
+  ];
+  
+  function calculateSumOfMarks(records) { <br>
+    let sum = 0; <br>
+  
+    for (const record of records) { <br>
+      if (record.id > 120) { <br>
+        sum += record.marks;  <br>
+      }<br>
+    }<br>
+  
+    return sum;<br>
+  }
+  
+  const sumOfMarks = calculateSumOfMarks(studentRecords);<br>
+  console.log(sumOfMarks);  <br>
+  
+</p>
+
+<h4>
+    ANS6. 
+    <br>
+    OUTPUT:- 143  <br>
+
+</h4>
+
+<br>
+<br>
+<hr>
+
+<h3>
+    Q7. This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.
+</h3>
+
+
+<p>
+    let studentRecords = [
+  { name: 'John', id: 123, marks: 98 },<br>
+  { name: 'Baba', id: 101, marks: 23 },<br>
+  { name: 'yaga', id: 200, marks: 45 },<br>
+  { name: 'Wick', id: 115, marks: 75 }<br>
+];<br>
+
+studentRecords.forEach((student) => { <br>
+  if (student.marks < 50) { <br>
+    student.marks += 15; <br>
+  }
+
+  const totalMarks = student.marks; <br>
+
+  if (totalMarks > 50) { <br>
+    console.log(`${student.name}: ${totalMarks}`);<br>
+  } <br>
+});
+
+</p>
+
+<h4>ANS7. 
+    <br>
+    
+    OUTPUT:- John: 98<br>
+          yaga: 60<br>
+          Wick: 75<br>
+      
+</h4>
+<br>
+<br>
+<hr>
+
+
+
+
+<h3>Q8. Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </h3>
+
+
+
+<p>
+    const studentRecords = [
+  { name: 'John', class: 'A', rollNo: 1 },<br>
+  { name: 'Baba', class: 'B', rollNo: 2 },<br>
+  { name: 'Yaga', class: 'A', rollNo: 3 },<br>
+  { name: 'Wick', class: 'C', rollNo: 4 },<br>
+  { name: 'Emma', class: 'B', rollNo: 5 },<br>
+  { name: 'Oliver', class: 'A', rollNo: 6 }<br>
+];
+
+for (const student of studentRecords) {<br>
+  console.log(`Name: ${student.name}`);<br>
+  console.log(`Class: ${student.class}`);
+  console.log(`Roll No: ${student.rollNo}`);<br>
+  console.log('------------------------');<br>
+}
+
+</p>
+
+
+<h4>ANS8.
+    <br>
+    OUTPUT:-Name: John
+    Class: ARoll No: 1
+    ------------------------ <br>
+    Name: Baba
+    Class: B
+    Roll No: 2
+    ------------------------<br>
+    Name: Yaga
+    Class: A
+    Roll No: 3
+    ------------------------<br>
+    Name: Wick
+    Class: C
+    Roll No: 4
+    ------------------------<br>
+    Name: Emma
+    Class: B
+    Roll No: 5
+    ------------------------<br>
+    Name: Oliver
+    Class: A
+    Roll No: 6
+    ------------------------<br>
+
+
+
+</h4>
+
+<br>
+<hr>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
